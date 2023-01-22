@@ -8,7 +8,7 @@ use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Event\GAEvent;
 
 class GoogleAnalyticsReport implements GoogleAnalyticsReportInterface
 {
-    private null|string $clientId;
+    private string $clientId;
 
     /** @var GAEvent[] */
     private array $events;
@@ -23,7 +23,7 @@ class GoogleAnalyticsReport implements GoogleAnalyticsReportInterface
         return $this->clientId;
     }
 
-    public function setClientId(?string $clientId): self
+    public function setClientId(string $clientId): self
     {
         $this->clientId = $clientId;
 
