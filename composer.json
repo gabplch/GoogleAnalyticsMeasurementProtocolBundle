@@ -1,6 +1,6 @@
 {
     "name": "gablch/google-analytics-measurement-protocol-bundle",
-    "description": "Provides communication with Google Analytics with measurement protocol in Symfony applications.",
+    "description": "Provides communication with Google Analytics, using measurement protocol in Symfony applications.",
     "keywords": ["bundle", "symfony", "google analytics", "measurement protocol", "backend tracking", "backend events"],
     "homepage": "https://github.com/gabplch/GoogleAnalyticsMeasurementProtocolBundle",
     "type": "symfony-bundle",
