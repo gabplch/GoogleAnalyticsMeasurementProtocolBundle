@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report;
+namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\Gtag;
 
-class GoogleAnalyticsGtagReport extends AbstractGoogleAnalyticsReport
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\AbstractGoogleAnalyticsReport;
+
+class GoogleAnalyticsGtagReport extends AbstractGoogleAnalyticsReport implements GAGtagReportInterface
 {
     private string $clientId;
 
