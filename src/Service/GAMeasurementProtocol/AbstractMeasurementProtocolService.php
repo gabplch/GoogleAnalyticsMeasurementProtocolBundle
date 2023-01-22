@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GoogleAnalyticsMeasurementProtocol;
+namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GAMeasurementProtocol;
 
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Trait\HttpClientTrait;
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Trait\SerializerTrait;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle;
 
-use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\DependencyInjection\Compiler\RegisterMeasurementProtocolPass;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\DependencyInjection\Compiler\RegisterGAMeasurementProtocolPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
@@ -14,6 +14,6 @@ class GoogleAnalyticsMeasurementProtocolBundle extends Bundle
     {
         parent::build($container);
 
-        $container->addCompilerPass(new RegisterMeasurementProtocolPass());
+        $container->addCompilerPass(new RegisterGAMeasurementProtocolPass());
     }
 }

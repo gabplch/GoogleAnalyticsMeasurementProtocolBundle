@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\Firebase;
 
-use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\GoogleAnalyticsReportInterface;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\GAReportInterface;
 
-interface GAFirebaseReportInterface extends GoogleAnalyticsReportInterface
+interface GAFirebaseReportInterface extends GAReportInterface
 {
 }

@@ -6,7 +6,7 @@ namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report;
 
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Event\GAEvent;
 
-class AbstractGoogleAnalyticsReport implements GoogleAnalyticsReportInterface
+class AbstractGAReport implements GAReportInterface
 {
     /** @var GAEvent[] */
     private array $events;

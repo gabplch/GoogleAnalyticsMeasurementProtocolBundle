@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\Firebase;
 
-use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\AbstractGoogleAnalyticsReport;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\AbstractGAReport;
 
-class GoogleAnalyticsFirebaseReport extends AbstractGoogleAnalyticsReport implements GAFirebaseReportInterface
+class GAFirebaseReport extends AbstractGAReport implements GAFirebaseReportInterface
 {
     private string $appInstanceId;
 

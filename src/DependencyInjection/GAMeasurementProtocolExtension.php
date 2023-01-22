@@ -7,7 +7,7 @@ namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\DependencyInjection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class MeasurementProtocolExtension extends Extension
+class GAMeasurementProtocolExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
