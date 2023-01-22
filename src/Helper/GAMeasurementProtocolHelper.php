@@ -15,10 +15,10 @@ class GAMeasurementProtocolHelper
         $path = self::MEASUREMENT_PROTOCOL_HOST;
 
         if ($isDebug) {
-            $path = \sprintf('%s%s', $path, self::MEASUREMENT_PROTOCOL_DEBUG_PATH);
+            $path = sprintf('%s%s', $path, self::MEASUREMENT_PROTOCOL_DEBUG_PATH);
         }
 
-        $path = \sprintf('%s%s', $path, self::MEASUREMENT_PROTOCOL_PATH);
+        $path = sprintf('%s%s', $path, self::MEASUREMENT_PROTOCOL_PATH);
 
         return $path;
     }

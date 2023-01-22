@@ -16,7 +16,10 @@ class RegisterMeasurementProtocolPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container): void
     {
-        $connectionPath = GAMeasurementProtocolHelper::getMeasurementProtocolConnectionPath($container->getParameter('google_analytics_measurement_protocol.debug'));
+        /** @var bool $isDebug */
+        $isDebug = $container->getParameter('google_analytics_measurement_protocol.debug');
+
+        $connectionPath = GAMeasurementProtocolHelper::getMeasurementProtocolConnectionPath($isDebug);
 
         if (null !== $container->getParameter('google_analytics_measurement_protocol.measurement_id')) {
             $definition = new Definition(
