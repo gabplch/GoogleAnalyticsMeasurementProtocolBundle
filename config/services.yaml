@@ -1,12 +1,4 @@
 parameters:
-    google_analytics_measurement_protocol:
-        api_secret: null
-        measurement_id: null
-        firebase_app_id: null
-        measurement_protocol_host: 'https://www.google-analytics.com'
-        measurement_protocol_path: '/mp/collect'
-        debug: false
-        debug_path: '/debug'
 
 services:
     _defaults:
