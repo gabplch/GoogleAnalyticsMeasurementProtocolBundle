@@ -1,8 +1,26 @@
 {
-    "type": "project",
-    "license": "proprietary",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "name": "gablch/google-analytics-measurement-protocol-bundle",
+    "description": "Provides communication with Google Analytics with measurement protocol in Symfony applications.",
+    "keywords": ["bundle", "symfony", "google analytics", "measurement protocol", "backend tracking", "backend events"],
+    "homepage": "https://github.com/gabplch/GoogleAnalyticsMeasurementProtocolBundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yarysh Vlad",
+            "email": "yarysh.vlad@gmail.com",
+            "role": "Creator"
+        },
+        {
+            "name": "Community",
+            "homepage": "https://github.com/gabplch/GoogleAnalyticsMeasurementProtocolBundle/graphs/contributors",
+            "role": "Contributors"
+        }
+    ],
+    "support": {
+        "email": "yarysh.vlad@gmail.com",
+        "issues": "https://github.com/gabplch/GoogleAnalyticsMeasurementProtocolBundle/issues"
+    },
     "require": {
         "php": ">=8.1",
         "symfony/framework-bundle": "6.2.*",
