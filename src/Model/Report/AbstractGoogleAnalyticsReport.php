@@ -6,28 +6,14 @@ namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report;
 
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Event\GAEvent;
 
-class GoogleAnalyticsReport implements GoogleAnalyticsReportInterface
+class AbstractGoogleAnalyticsReport implements GoogleAnalyticsReportInterface
 {
-    private string $clientId;
-
     /** @var GAEvent[] */
     private array $events;
 
     public function __construct()
     {
         $this->events = [];
-    }
-
-    public function getClientId(): ?string
-    {
-        return $this->clientId;
-    }
-
-    public function setClientId(string $clientId): self
-    {
-        $this->clientId = $clientId;
-
-        return $this;
     }
 
     /**
