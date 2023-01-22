@@ -22,4 +22,12 @@ class GAMeasurementProtocolHelper
 
         return $path;
     }
+
+    public static function fakeClientId(int $googleAnalyticsVersion): string
+    {
+        $uniqueId = random_int(1000000000, 9999999999);
+        $timestamp = (new \DateTime())->getTimestamp();
+
+        return sprintf('GA%d.1.%d.%d', $googleAnalyticsVersion, $uniqueId, $timestamp);
+    }
 }
