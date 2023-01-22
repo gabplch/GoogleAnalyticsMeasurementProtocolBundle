@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Model\Event;
+namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Event;
 
 interface GAEventParameterInterface
 {

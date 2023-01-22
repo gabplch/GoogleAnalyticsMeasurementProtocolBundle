@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App;
+namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle;
 
-use App\DependencyInjection\Compiler\RegisterMeasurementProtocolPass;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\DependencyInjection\Compiler\RegisterMeasurementProtocolPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

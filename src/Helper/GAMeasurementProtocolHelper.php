@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Helper;
+namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Helper;
 
 class GAMeasurementProtocolHelper
 {

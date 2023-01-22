@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Service\GoogleAnalyticsMeasurementProtocol;
+namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GoogleAnalyticsMeasurementProtocol;
 
-use App\Trait\HttpClientTrait;
-use App\Trait\SerializerTrait;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Trait\HttpClientTrait;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Trait\SerializerTrait;
 
 abstract class AbstractMeasurementProtocolService implements MeasurementProtocolServiceInterface
 {

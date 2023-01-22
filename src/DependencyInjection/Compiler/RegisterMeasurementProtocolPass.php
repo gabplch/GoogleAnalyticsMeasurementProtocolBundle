@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\DependencyInjection\Compiler;
+namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\DependencyInjection\Compiler;
 
-use App\Helper\GAMeasurementProtocolHelper;
-use App\Service\GoogleAnalyticsMeasurementProtocol\FirebaseMeasurementProtocolService;
-use App\Service\GoogleAnalyticsMeasurementProtocol\GtagMeasurementProtocolService;
-use App\Service\GoogleAnalyticsMeasurementProtocol\MeasurementProtocolServiceInterface;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Helper\GAMeasurementProtocolHelper;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GoogleAnalyticsMeasurementProtocol\FirebaseMeasurementProtocolService;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GoogleAnalyticsMeasurementProtocol\GtagMeasurementProtocolService;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GoogleAnalyticsMeasurementProtocol\MeasurementProtocolServiceInterface;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;

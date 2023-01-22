@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Model\Report;
+namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report;
 
-use App\Model\Event\GAEvent;
+use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Event\GAEvent;
 
 class GoogleAnalyticsReport implements GoogleAnalyticsReportInterface
 {

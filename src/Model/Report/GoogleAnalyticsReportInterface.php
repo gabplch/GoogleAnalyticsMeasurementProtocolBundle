@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Model\Report;
+namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report;
 
 interface GoogleAnalyticsReportInterface
 {

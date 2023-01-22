@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Trait;
+namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Trait;
 
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Contracts\Service\Attribute\Required;
