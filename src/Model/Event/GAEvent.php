@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Model\Event;
 
-class GoogleAnalyticsEvent implements GoogleAnalyticsEventInterface
+class GAEvent implements GAEventInterface
 {
     public function __construct(
         private string $name,
-        private GoogleAnalyticsEventParameterInterface $parameter,
+        private GAEventParameterInterface $parameter,
     ) {
     }
 
@@ -24,12 +24,12 @@ class GoogleAnalyticsEvent implements GoogleAnalyticsEventInterface
         return $this;
     }
 
-    public function getParameter(): GoogleAnalyticsEventParameterInterface
+    public function getParameter(): GAEventParameterInterface
     {
         return $this->parameter;
     }
 
-    public function setParameter(GoogleAnalyticsEventParameterInterface $parameter): self
+    public function setParameter(GAEventParameterInterface $parameter): self
     {
         $this->parameter = $parameter;
 

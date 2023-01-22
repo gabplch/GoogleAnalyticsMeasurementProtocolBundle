@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Model\Report;
 
-use App\Model\Event\GoogleAnalyticsEvent;
+use App\Model\Event\GAEvent;
 
 class GoogleAnalyticsReport implements GoogleAnalyticsReportInterface
 {
     private null|string $clientId;
 
-    /** @var GoogleAnalyticsEvent[] */
+    /** @var GAEvent[] */
     private array $events;
 
     public function __construct()
@@ -31,7 +31,7 @@ class GoogleAnalyticsReport implements GoogleAnalyticsReportInterface
     }
 
     /**
-     * @return GoogleAnalyticsEvent[]
+     * @return GAEvent[]
      */
     public function getEvents(): array
     {
@@ -39,7 +39,7 @@ class GoogleAnalyticsReport implements GoogleAnalyticsReportInterface
     }
 
     /**
-     * @param GoogleAnalyticsEvent[] $events
+     * @param GAEvent[] $events
      *
      * @return $this
      */
@@ -50,7 +50,7 @@ class GoogleAnalyticsReport implements GoogleAnalyticsReportInterface
         return $this;
     }
 
-    public function addEvent(GoogleAnalyticsEvent $event): self
+    public function addEvent(GAEvent $event): self
     {
         $this->events[] = $event;
 
