@@ -13,8 +13,8 @@ abstract class AbstractMeasurementProtocolService implements MeasurementProtocol
     use SerializerTrait;
 
     public function __construct(
-        private readonly string $connectionPath,
-        private readonly string $apiSecret,
+        protected readonly string $connectionPath,
+        protected readonly string $apiSecret,
     ) {
     }
 }
