@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GoogleAnalyticsMeasurementProtocol;
 
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\GoogleAnalyticsReportInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class GtagMeasurementProtocolService extends AbstractMeasurementProtocolService
@@ -21,5 +22,20 @@ class GtagMeasurementProtocolService extends AbstractMeasurementProtocolService
 
     public function sendReport(GoogleAnalyticsReportInterface $googleAnalyticsReport): ResponseInterface
     {
+        $payload = $this->serializer->serialize($googleAnalyticsReport, 'json');
+
+        $request = $this->httpClient->request(
+            Request::METHOD_POST,
+            $this->connectionPath,
+            [
+                'query' => [
+                    self::MEASUREMENT_ID => $this->measurementId,
+                    self::API_SECRET => $this->apiSecret,
+                ],
+                'body' => $payload,
+            ]
+        );
+
+        return $request;
     }
 }
