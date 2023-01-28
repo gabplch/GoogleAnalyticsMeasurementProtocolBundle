@@ -11,6 +11,8 @@ use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GAMeasurementProtoc
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class RegisterGAMeasurementProtocolPass implements CompilerPassInterface
 {
@@ -26,6 +28,8 @@ class RegisterGAMeasurementProtocolPass implements CompilerPassInterface
                 GtagMeasurementProtocolService::class,
                 [
                     $connectionPath,
+                    $container->findDefinition(HttpClientInterface::class),
+                    $container->getDefinition(Serializer::class),
                     $container->getParameter('google_analytics_measurement_protocol.api_secret'),
                     $container->getParameter('google_analytics_measurement_protocol.measurement_id'),
                 ]
@@ -35,6 +39,8 @@ class RegisterGAMeasurementProtocolPass implements CompilerPassInterface
                 FirebaseMeasurementProtocolService::class,
                 [
                     $connectionPath,
+                    $container->findDefinition(HttpClientInterface::class),
+                    $container->getDefinition(Serializer::class),
                     $container->getParameter('google_analytics_measurement_protocol.api_secret'),
                     $container->getParameter('google_analytics_measurement_protocol.firebase_app_id'),
                 ]

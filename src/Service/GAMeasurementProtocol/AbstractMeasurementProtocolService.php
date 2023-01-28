@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GAMeasurementProtocol;
 
-use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Trait\HttpClientTrait;
-use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Trait\SerializerTrait;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 abstract class AbstractMeasurementProtocolService implements MeasurementProtocolServiceInterface
 {
-    use HttpClientTrait;
-    use SerializerTrait;
-
     public function __construct(
+        protected readonly HttpClientInterface $httpClient,
+        protected readonly Serializer $serializer,
         protected readonly string $connectionPath,
         protected readonly string $apiSecret,
     ) {

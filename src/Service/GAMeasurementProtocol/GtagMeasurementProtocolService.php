@@ -7,6 +7,8 @@ namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GAMeasurement
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\GAReportInterface;
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\Gtag\GAGtagReportInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class GtagMeasurementProtocolService extends AbstractMeasurementProtocolService
@@ -14,11 +16,13 @@ class GtagMeasurementProtocolService extends AbstractMeasurementProtocolService
     private const MEASUREMENT_ID = 'measurement_id';
 
     public function __construct(
+        HttpClientInterface $httpClient,
+        Serializer $serializer,
         string $connectionPath,
         string $apiSecret,
         private readonly string $measurementId,
     ) {
-        parent::__construct($connectionPath, $apiSecret);
+        parent::__construct($httpClient, $serializer, $connectionPath, $apiSecret);
     }
 
     public function sendReport(GAGtagReportInterface|GAReportInterface $googleAnalyticsReport): ResponseInterface

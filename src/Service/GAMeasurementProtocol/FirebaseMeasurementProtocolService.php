@@ -7,6 +7,8 @@ namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Service\GAMeasurement
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\Firebase\GAFirebaseReportInterface;
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\GAReportInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class FirebaseMeasurementProtocolService extends AbstractMeasurementProtocolService
@@ -14,11 +16,13 @@ class FirebaseMeasurementProtocolService extends AbstractMeasurementProtocolServ
     private const FIREBASE_APP_ID = 'firebase_app_id';
 
     public function __construct(
+        HttpClientInterface $httpClient,
+        Serializer $serializer,
         string $connectionPath,
         string $apiSecret,
         private readonly string $firebaseAppId,
     ) {
-        parent::__construct($connectionPath, $apiSecret);
+        parent::__construct($httpClient, $serializer, $connectionPath, $apiSecret);
     }
 
     public function sendReport(GAFirebaseReportInterface|GAReportInterface $googleAnalyticsReport): ResponseInterface
