@@ -9,7 +9,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 interface MeasurementProtocolServiceInterface
 {
-    public const API_SECRET = 'api_secret';
+    final public const API_SECRET_KEY = 'api_secret';
 
     public function sendReport(GAReportInterface $googleAnalyticsReport): ResponseInterface;
 }

@@ -13,7 +13,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class GtagMeasurementProtocolService extends AbstractMeasurementProtocolService
 {
-    private const MEASUREMENT_ID = 'measurement_id';
+    protected final const MEASUREMENT_ID_KEY = 'measurement_id';
 
     public function __construct(
         HttpClientInterface $httpClient,
@@ -34,8 +34,8 @@ class GtagMeasurementProtocolService extends AbstractMeasurementProtocolService
             $this->connectionPath,
             [
                 'query' => [
-                    self::MEASUREMENT_ID => $this->measurementId,
-                    self::API_SECRET => $this->apiSecret,
+                    self::MEASUREMENT_ID_KEY => $this->measurementId,
+                    self::API_SECRET_KEY => $this->apiSecret,
                 ],
                 'body' => $payload,
             ]

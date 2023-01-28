@@ -13,7 +13,7 @@ use Symfony\Contracts\HttpClient\ResponseInterface;
 
 class FirebaseMeasurementProtocolService extends AbstractMeasurementProtocolService
 {
-    private const FIREBASE_APP_ID = 'firebase_app_id';
+    protected final const FIREBASE_APP_ID_KEY = 'firebase_app_id';
 
     public function __construct(
         HttpClientInterface $httpClient,
@@ -34,8 +34,8 @@ class FirebaseMeasurementProtocolService extends AbstractMeasurementProtocolServ
             $this->connectionPath,
             [
                 'query' => [
-                    self::FIREBASE_APP_ID => $this->firebaseAppId,
-                    self::API_SECRET => $this->apiSecret,
+                    self::FIREBASE_APP_ID_KEY => $this->firebaseAppId,
+                    self::API_SECRET_KEY => $this->apiSecret,
                 ],
                 'body' => $payload,
             ]
