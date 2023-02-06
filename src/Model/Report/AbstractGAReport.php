@@ -18,6 +18,16 @@ class AbstractGAReport implements GAReportInterface
     )]
     private array $events;
 
+    #[Assert\Sequentially(
+        constraints: [
+            new Assert\Length(
+                min: 1,
+                charset: 'UTF-8',
+            )
+        ]
+    )]
+    private ?string $userId = null;
+
     public function __construct()
     {
         $this->events = [];
@@ -46,6 +56,18 @@ class AbstractGAReport implements GAReportInterface
     public function addEvent(GAEvent $event): self
     {
         $this->events[] = $event;
+
+        return $this;
+    }
+
+    public function getUserId(): ?string
+    {
+        return $this->userId;
+    }
+
+    public function setUserId(?string $userId): self
+    {
+        $this->userId = $userId;
 
         return $this;
     }
