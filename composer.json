@@ -27,6 +27,7 @@
         "symfony/http-client": "^v6.2",
         "symfony/runtime": "^v6.2",
         "symfony/serializer": "^v6.2",
+        "symfony/validator": "^6.2",
         "symfony/yaml": "^v6.2"
     },
     "conflict": {

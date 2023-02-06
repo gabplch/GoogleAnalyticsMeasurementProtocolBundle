@@ -12,6 +12,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class RegisterGAMeasurementProtocolPass implements CompilerPassInterface
@@ -30,6 +31,7 @@ class RegisterGAMeasurementProtocolPass implements CompilerPassInterface
                     $connectionPath,
                     $container->findDefinition(HttpClientInterface::class),
                     $container->getDefinition(Serializer::class),
+                    $container->getDefinition(ValidatorInterface::class),
                     $container->getParameter('google_analytics_measurement_protocol.api_secret'),
                     $container->getParameter('google_analytics_measurement_protocol.measurement_id'),
                 ]
@@ -41,6 +43,7 @@ class RegisterGAMeasurementProtocolPass implements CompilerPassInterface
                     $connectionPath,
                     $container->findDefinition(HttpClientInterface::class),
                     $container->getDefinition(Serializer::class),
+                    $container->getDefinition(ValidatorInterface::class),
                     $container->getParameter('google_analytics_measurement_protocol.api_secret'),
                     $container->getParameter('google_analytics_measurement_protocol.firebase_app_id'),
                 ]

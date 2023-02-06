@@ -8,6 +8,7 @@ use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\GAReportInterf
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report\Gtag\GAGtagReportInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
 
@@ -18,11 +19,12 @@ class GtagMeasurementProtocolService extends AbstractMeasurementProtocolService
     public function __construct(
         HttpClientInterface $httpClient,
         Serializer $serializer,
+        ValidatorInterface $validator,
         string $connectionPath,
         string $apiSecret,
         private readonly string $measurementId,
     ) {
-        parent::__construct($httpClient, $serializer, $connectionPath, $apiSecret);
+        parent::__construct($httpClient, $serializer, $validator, $connectionPath, $apiSecret);
     }
 
     public function sendReport(GAGtagReportInterface|GAReportInterface $googleAnalyticsReport): ResponseInterface
