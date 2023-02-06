@@ -28,6 +28,8 @@ class AbstractGAReport implements GAReportInterface
     )]
     private ?string $userId = null;
 
+    private ?int $timestampMicros = null;
+
     public function __construct()
     {
         $this->events = [];
@@ -68,6 +70,18 @@ class AbstractGAReport implements GAReportInterface
     public function setUserId(?string $userId): self
     {
         $this->userId = $userId;
+
+        return $this;
+    }
+
+    public function getTimestampMicros(): ?int
+    {
+        return $this->timestampMicros;
+    }
+
+    public function setTimestampMicros(?int $timestampMicros): self
+    {
+        $this->timestampMicros = $timestampMicros;
 
         return $this;
     }
