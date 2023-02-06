@@ -29,6 +29,8 @@ class GtagMeasurementProtocolService extends AbstractMeasurementProtocolService
 
     public function sendReport(GAGtagReportInterface|GAReportInterface $googleAnalyticsReport): ResponseInterface
     {
+        $this->validator->validate($googleAnalyticsReport);
+
         $payload = $this->serializer->serialize($googleAnalyticsReport, 'json');
 
         $request = $this->httpClient->request(

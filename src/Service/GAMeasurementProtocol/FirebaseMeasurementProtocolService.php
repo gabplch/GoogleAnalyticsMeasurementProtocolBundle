@@ -29,6 +29,8 @@ class FirebaseMeasurementProtocolService extends AbstractMeasurementProtocolServ
 
     public function sendReport(GAFirebaseReportInterface|GAReportInterface $googleAnalyticsReport): ResponseInterface
     {
+        $this->validator->validate($googleAnalyticsReport);
+
         $payload = $this->serializer->serialize($googleAnalyticsReport, 'json');
 
         $request = $this->httpClient->request(

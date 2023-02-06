@@ -6,9 +6,16 @@ namespace Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Report;
 
 use Gabplch\GoogleAnalyticsMeasurementProtocolBundle\Model\Event\GAEvent;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 class AbstractGAReport implements GAReportInterface
 {
-    /** @var GAEvent[] */
+    #[Assert\Sequentially(
+        constraints: [
+            new Assert\NotBlank(),
+            new Assert\Count(min: 1, max: 25),
+        ]
+    )]
     private array $events;
 
     public function __construct()
