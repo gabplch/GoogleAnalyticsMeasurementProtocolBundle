@@ -23,11 +23,11 @@
     },
     "require": {
         "php": ">=8.1",
-        "symfony/framework-bundle": "^6.2.*",
-        "symfony/http-client": "^6.2.*",
-        "symfony/runtime": "^6.2.*",
-        "symfony/serializer": "^6.2.*",
-        "symfony/yaml": "^6.2.*"
+        "symfony/framework-bundle": "^v6.2",
+        "symfony/http-client": "^v6.2",
+        "symfony/runtime": "^v6.2",
+        "symfony/serializer": "^v6.2",
+        "symfony/yaml": "^v6.2"
     },
     "conflict": {
         "symfony/symfony": "*"
