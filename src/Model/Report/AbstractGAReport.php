@@ -30,6 +30,8 @@ class AbstractGAReport implements GAReportInterface
 
     private ?int $timestampMicros = null;
 
+    private bool $nonPersonalizedAds = false;
+
     public function __construct()
     {
         $this->events = [];
@@ -82,6 +84,18 @@ class AbstractGAReport implements GAReportInterface
     public function setTimestampMicros(?int $timestampMicros): self
     {
         $this->timestampMicros = $timestampMicros;
+
+        return $this;
+    }
+
+    public function isNonPersonalizedAds(): bool
+    {
+        return $this->nonPersonalizedAds;
+    }
+
+    public function setNonPersonalizedAds(bool $nonPersonalizedAds): self
+    {
+        $this->nonPersonalizedAds = $nonPersonalizedAds;
 
         return $this;
     }
